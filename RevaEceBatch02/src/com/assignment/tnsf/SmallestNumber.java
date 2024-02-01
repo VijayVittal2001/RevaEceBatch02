@@ -16,27 +16,18 @@ public class SmallestNumber {
 		System.out.println("Enter num3");
 		int num3=sc.nextInt();
 		
-		int smallest = findSmallest(num1,num2,num3);
-		System.out.println("The smallest number is="+ smallest);
-			
-
-	}
-
-	private static int findSmallest(int a, int b, int c) {
-		if(a==b && b==c && c==a) {
+		if(num1==num2 && num2==num3) {
 			System.out.println("All numbers are equal");
 		}
-		else if (a<=b && a<=c) {
-			return a;
-		}
-		else if (b<=a && b<=c) {
-			return b;
-		}
 		else {
-			return c;
+	        // Using ternary operator to find the smallest number
+	        int smallest = (num1 < num2) ? ((num1 < num3) ? num1 : num3) : ((num2 < num3) ? num2 : num3);
+
+	        System.out.println("The smallest number is: " + smallest);
 		}
-			
-		return 0;
+		
+	
 	}
 
 }
+		
